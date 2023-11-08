@@ -1,3 +1,4 @@
 # PerformanceTweaker
 A simple shell script that enables persistent changes to the CPU governor profile on Linux.  
-This project is a work in progress.
+This project is a work in progress.  
+This shell script should be run as root.
