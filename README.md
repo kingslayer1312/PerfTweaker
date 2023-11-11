@@ -20,3 +20,5 @@ Note: there could be a considerable drop in battery life is you use performance 
 **1. Become root:** sudo -i  
 **2. Navigate to script location:** cd /path/to/script/performance-tweaker.sh  
 **3. Execute script:** bash performance-tweaker.sh  
+
+In case you wish to restore the original cpu governor mode, run the restore-defaults.sh script as root
