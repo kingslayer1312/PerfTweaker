@@ -9,23 +9,23 @@ echo "Choose a mode: "
 read selected_mode
 
 cd /usr/local/bin/
-rm -f cpu_gov.sh
-echo "#!/bin/bash" >> cpu_gov.sh
-echo "echo $selected_mode | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor" >> cpu_gov.sh
-chmod 744 /usr/local/bin/cpu_gov.sh
+rm -f perf_prof.sh
+echo "#!/bin/bash" >> perf_prof.sh
+echo "echo $selected_mode | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor" >> perf_prof.sh
+chmod 744 /usr/local/bin/perf_prof.sh
 
 cd /etc/systemd/system/
-rm -f cpu_gov.service
-echo "[Unit]" >> cpu_gov.service
-echo "After=network.target" >> cpu_gov.service
-echo -en '\n' >> cpu_gov.service
-echo "[Service]" >> cpu_gov.service
-echo "ExecStart=/usr/local/bin/cpu_gov.sh" >> cpu_gov.service
-echo -en '\n' >> cpu_gov.service
-echo "[Install]" >> cpu_gov.service
-echo "WantedBy=default.target" >> cpu_gov.service
-chmod 664 /etc/systemd/system/cpu_gov.service
+rm -f perf_prof.service
+echo "[Unit]" >> perf_prof.service
+echo "After=network.target" >> perf_prof.service
+echo -en '\n' >> perf_prof.service
+echo "[Service]" >> perf_prof.service
+echo "ExecStart=/usr/local/bin/perf_prof.sh" >> perf_prof.service
+echo -en '\n' >> perf_prof.service
+echo "[Install]" >> perf_prof.service
+echo "WantedBy=default.target" >> perf_prof.service
+chmod 664 /etc/systemd/system/perf_prof.service
 
 systemctl daemon-reload
-systemctl enable cpu_gov.service
-systemctl start cpu_gov.service
+systemctl enable perf_prof.service
+systemctl start perf_prof.service
