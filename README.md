@@ -12,9 +12,12 @@ Run the script as root.
 | ondemand | Scales the frequency dynamically |
 | conservative |	Same as ondemand, but scale more gradually |
 
-*Table from: https://nocache.org/p/set-cpu-governor-frequency-using-cpupower-on-linux*
+*Table from: https://nocache.org/p/set-cpu-governor-frequency-using-cpupower-on-linux*  
 
-Note: there could be a considerable drop in battery life is you use performance governor
+The scripts have been tested on Ubuntu 22.04, Fedora 38/39 and openSUSE Tumbleweed. However, it should work fine on any other distro.
+
+Note: there could be a considerable drop in battery life if you use performance governor
+
 
 ### Instructions
 **1. Become root:** sudo -i  
