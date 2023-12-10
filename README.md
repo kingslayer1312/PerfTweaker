@@ -1,4 +1,4 @@
-# PerformanceTweaker
+# CPU Governor Tweaker
 A simple shell script that enables persistent changes to the CPU governor profile on Linux.  
 This script basically automates the work shown in the Fedora discussions post at https://discussion.fedoraproject.org/t/how-to-increasing-performance-by-changing-cpu-governor-and-reducing-swappiness/71429  
 Run the script as root.  
